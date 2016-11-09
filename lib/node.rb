@@ -1,1 +1,2 @@
-Node = Struct.new(:value)
+Node = Struct.new(:value, :left, :right)
+
