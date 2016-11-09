@@ -11,8 +11,13 @@ class BinaryTree
     @data = num_arr
   end
 
-  def add_root
+  def add_root # note => modifies @data
     @root = Node.new(data.shift, nil, nil, 0)
+  end
+
+  def add_node # note => modifies @data
+    new_node = Node.new(data.shift, nil, nil, 0)
+    find_node(new_node)
   end
 
   private
@@ -24,5 +29,7 @@ class BinaryTree
   def no_repeats?(array)
     array.uniq.length == array.length
   end
+
+  
 
 end

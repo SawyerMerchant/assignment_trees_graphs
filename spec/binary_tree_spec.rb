@@ -28,16 +28,21 @@ describe BinaryTree do
       test_tree.add_root
       expect(test_tree.root).to be_a(Node)
     end
+
   end
 
   describe '#add_node' do
 
-    xit 'creates a left node for value lower than parent' do
-      test_tree.add_node(12)
-      expect()
+    xit 'creates a left child if the parent doesn\'t have a left child' do
     end
 
-    it 'creates a right node for value greater than parent'
+    it 'creates a right node for value greater than parent' do
+      test_tree.add_root # 8
+      test_tree.add_node # 10
+      expect(test_tree.root.right).to be_a(Node)
+      expect(test_tree.root.right.data).to eq(10)
+    end
+
   end
 
 end
