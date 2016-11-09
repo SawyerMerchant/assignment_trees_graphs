@@ -22,4 +22,22 @@ describe BinaryTree do
 
   end
 
+  describe '#add_root' do
+
+    it 'creates first node from first int in array' do
+      test_tree.add_root
+      expect(test_tree.root).to be_a(Node)
+    end
+  end
+
+  describe '#add_node' do
+
+    xit 'creates a left node for value lower than parent' do
+      test_tree.add_node(12)
+      expect()
+    end
+
+    it 'creates a right node for value greater than parent'
+  end
+
 end
