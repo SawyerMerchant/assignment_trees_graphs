@@ -17,9 +17,9 @@ require 'node'
 
 describe Node do
 
-  let(:left_node) { Node.new(5, nil, nil, 1)}
-  let(:right_node) { Node.new(11, nil, nil, 1)}
-  let(:test_node) { Node.new(10, left_node, right_node, 0) }
+  let(:left_node) { Node.new(5, nil, nil)}
+  let(:right_node) { Node.new(11, nil, nil)}
+  let(:test_node) { Node.new(10, left_node, right_node) }
 
   it 'takes an integer' do
     expect(test_node.value).to eq(10)
@@ -33,8 +33,8 @@ describe Node do
     expect(test_node.right).to eq(right_node)
   end
 
-  it 'takes a depth' do
-    expect(test_node.depth).to eq(0)
-  end
+  # it 'takes a depth' do
+  #   expect(test_node.depth).to eq(0)
+  # end
 
 end

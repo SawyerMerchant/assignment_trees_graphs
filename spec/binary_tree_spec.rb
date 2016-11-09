@@ -33,16 +33,30 @@ describe BinaryTree do
 
   describe '#add_node' do
 
-    xit 'creates a left child if the parent doesn\'t have a left child' do
+    it 'creates a left child to root' do
+      test_tree.add_root
+      2.times  {test_tree.add_node}
+      left_child = test_tree.root.left
+      expect(left_child).to be_a(Node)
+      expect(left_child.value).to eq(3)
     end
 
-    it 'creates a right node for value greater than parent' do
+    it 'creates a right node to root' do
       test_tree.add_root # 8
       test_tree.add_node # 10
-      expect(test_tree.root.right).to be_a(Node)
-      expect(test_tree.root.right.data).to eq(10)
+      right_child = test_tree.root.right
+      expect(right_child).to be_a(Node)
+      expect(right_child.value).to eq(10)
     end
 
+    it 'creates a left grandchild to root' do
+      test_tree.add_root
+      3.times  {test_tree.add_node}
+      grandchild = test_tree.root.left.left
+      expect(grandchild).to be_a(Node)
+      expect(grandchild.value).to eq(1)
+      # expect(grandchild.depth).to eq(2)
+    end
   end
 
 end
